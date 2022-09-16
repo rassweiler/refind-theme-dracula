@@ -40,15 +40,15 @@ main() {
   fi
   
   # If you don't use PKGBUILD from Arch
-  if ! [[ "${THEME_ROOT#*/}" == "usr/share/refind/themes/nord" ]]; then    
+  if ! [[ "${THEME_ROOT#*/}" == "usr/share/refind/themes/dracula" ]]; then    
     echo "Downloading rEFInd theme Nord..."
 
-    if ! git clone "https://github.com/jaltuna/refind-theme-nord.git" &>/dev/null; then
-      echo "Could not downloaded refind-theme-nord"
+    if ! git clone "https://github.com/rassweiler/refind-theme-dracula.git" &>/dev/null; then
+      echo "Could not download refind-theme-dracula"
       exit 1
     fi
     
-    THEME_ROOT="$(cd refind-theme-nord && pwd -P)"
+    THEME_ROOT="$(cd refind-theme-dracula && pwd -P)"
   fi
 
   echo "Searching rEFInd installation in EFI partition..."
@@ -76,13 +76,13 @@ main() {
   fi
 
   # Initializing constants
-  NORD_DIR="$REFIND_DIR/themes/nord"
+  DRACULA_DIR="$REFIND_DIR/themes/dracula"
   REFIND_CONF="$REFIND_DIR/refind.conf"
-  INCLUDE_LINE="include themes/nord/theme.conf"
+  INCLUDE_LINE="include themes/dracula/theme.conf"
   
   # Copying files
-  install -D -m0644 -t "$NORD_DIR/" "$THEME_ROOT/"{theme.conf,*.png}
-  install -D -m0644 -t "$NORD_DIR/icons/" "$THEME_ROOT/icons/"*.png
+  install -D -m0644 -t "$DRACULA_DIR/" "$THEME_ROOT/"{theme.conf,*.png}
+  install -D -m0644 -t "$DRACULA_DIR/icons/" "$THEME_ROOT/icons/"*.png
 
   # Including theme
   if ! grep -e "^$INCLUDE_LINE" "$REFIND_CONF" &>/dev/null; then

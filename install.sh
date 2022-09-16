@@ -22,8 +22,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-curl -s https://raw.githubusercontent.com/jaltuna/refind-theme-nord/main/setup.sh -o setup.sh
+curl -s https://raw.githubusercontent.com/rassweiler/refind-theme-dracula/master/setup.sh -o setup.sh
 sudo bash setup.sh
 
-# Removing refind-theme-nord cloned
-sudo rm -rf setup.sh refind-theme-nord 2>/dev/null
+# Removing refind-theme-dracula cloned
+sudo rm -rf setup.sh refind-theme-dracula 2>/dev/null
