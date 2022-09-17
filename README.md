@@ -10,7 +10,7 @@ This theme is derived from icons from other source; see [COPYING](https://github
 
 ## Installation
 
-### General
+### UNIX General
 
 On UNIX-like platforms simply open a terminal and enter:
 
@@ -18,7 +18,7 @@ On UNIX-like platforms simply open a terminal and enter:
 curl -sL https://raw.githubusercontent.com/rassweiler/refind-theme-dracula/master/install.sh | bash
 ```
 
-Or if you prefer to install manually:
+### UNIX Manual:
 
 1. Download lastest release
 	```bash
@@ -120,4 +120,5 @@ paru -S refind-theme-dracula
 
 ### TODO
 
-- [ ] Add [Dracula](https://draculatheme.com/contribute) palette
+- [X] Add [Dracula](https://draculatheme.com/contribute) palette
+- [ ] Setup dracula colours on certain os icons
