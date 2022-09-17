@@ -13,7 +13,7 @@ This theme is derived from icons from other source; see [COPYING](https://github
 On UNIX-like platforms simply open a terminal and enter:
 
 ```bash
-curl -sL https://git.io/refind-theme-dracula | bash
+curl -sL https://raw.githubusercontent.com/rassweiler/refind-theme-dracula/master/install.sh | bash
 ```
 
 ![install refind theme dracula](samples/refind-theme-dracula_install.gif)
