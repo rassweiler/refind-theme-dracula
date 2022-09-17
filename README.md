@@ -10,13 +10,13 @@ This theme is derived from icons from other source; see [COPYING](https://github
 
 ## Installation
 
+### General
+
 On UNIX-like platforms simply open a terminal and enter:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/rassweiler/refind-theme-dracula/master/install.sh | bash
 ```
-
-![install refind theme dracula](samples/refind-theme-dracula_install.gif)
 
 Or if you prefer to install manually:
 
@@ -61,7 +61,7 @@ Or if you prefer to install manually:
 	echo "include themes/dracula/theme.conf" | sudo tee -a /efi/EFI/refind/refind.conf
 	```
 
-## Installation on Arch Linux
+### Arch Linux AUR
 
 From AUR repository:
 ```bash
@@ -74,6 +74,49 @@ Using AUR helper as PARU:
 ```bash
 paru -S refind-theme-dracula
 ```
+
+### Arch Linux Manual
+
+1. Download lastest release
+	```bash
+	curl -sL https://github.com/rassweiler/refind-theme-dracula/releases/download/1.0.0/refind-theme-dracula-1.0.0.tar.gz | tar xvz
+	```
+	```bash
+	cd refind-theme-dracula-1.0.0
+	```
+2. Identify your `EFI` partition and inside it your `refind` directory. For example: `/boot/EFI/refind`
+	```bash
+	tree -L 3 /boot	
+	```
+	It results in:
+	```bash
+	/boot
+	└── EFI
+		└── refind
+			├── fonts
+			├── icons
+			├── refind.conf
+			├── refind_x64.efi
+			└── vars
+	```
+  
+3. Create the directory `/boot/EFI/refind/themes/dracula` and copy files to it. You need root permissions
+	```bash
+	sudo mkdir -p /boot/EFI/refind/themes/dracula
+	```
+
+	```bash
+	sudo cp -r {icons,theme.conf,*.png} $_
+	```
+
+4. Includes Dracula theme in `/boot/EFI/refind/refind.conf`
+	```bash
+	sudo sed "s/^include/#include/g" -i /boot/EFI/refind/refind.conf
+	```
+
+	```bash
+	echo "include themes/dracula/theme.conf" | sudo tee -a /boot/EFI/refind/refind.conf
+	```
 
 ### TODO
 

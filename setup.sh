@@ -41,7 +41,7 @@ main() {
   
   # If you don't use PKGBUILD from Arch
   if ! [[ "${THEME_ROOT#*/}" == "usr/share/refind/themes/dracula" ]]; then    
-    echo "Downloading rEFInd theme Nord..."
+    echo "Downloading rEFInd theme Dracula..."
 
     if ! git clone "https://github.com/rassweiler/refind-theme-dracula.git" &>/dev/null; then
       echo "Could not download refind-theme-dracula"
@@ -89,11 +89,11 @@ main() {
     sed "s/^include/#include/g" -i "$REFIND_CONF"
     sync
 
-    echo -e "\n#Nord theme\n$INCLUDE_LINE" >> "$REFIND_CONF"
+    echo -e "\n#Dracula theme\n$INCLUDE_LINE" >> "$REFIND_CONF"
     sync
   fi
 
-  echo "rEFInd theme Nord installed!"  
+  echo "rEFInd theme Dracula installed!"  
 }
 
 __refind_dir_exists__() {  
